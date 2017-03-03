@@ -78,7 +78,7 @@ public class Test {
 	 
 	        }
 	    });
-	    pubnub.subscribe().channels(Arrays.asList("awesomeChannel")).execute();
+	    pubnub.subscribe().channels(Arrays.asList("RemoteDesktop")).execute();
 	    Scanner in = new Scanner(System.in);
 	    while(true){
 	    	String msg;
@@ -88,7 +88,7 @@ public class Test {
 	    }
 	}
 	public static void send(String s){
-		pubnub.publish().channel("awesomeChannel").message(s).async(new PNCallback<PNPublishResult>() {
+		pubnub.publish().channel("RemoteDesktop").message(s).async(new PNCallback<PNPublishResult>() {
             @Override
             public void onResponse(PNPublishResult result, PNStatus status) {
                 // Check whether request successfully completed or not.
